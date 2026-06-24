@@ -1,0 +1,116 @@
+.auth-layout {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+/* ── Hero (left) ── */
+.auth-hero {
+  background: linear-gradient(135deg, #0a1628 0%, #0d1e38 50%, #091220 100%);
+  border-right: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 48px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Animated mesh background */
+.auth-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 60% 50% at 30% 40%, rgba(56,189,248,0.12) 0%, transparent 70%),
+    radial-gradient(ellipse 40% 60% at 70% 70%, rgba(129,140,248,0.1) 0%, transparent 60%);
+  animation: meshPulse 6s ease-in-out infinite alternate;
+}
+@keyframes meshPulse {
+  from { opacity: 0.6; }
+  to   { opacity: 1; }
+}
+
+.auth-hero-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 420px;
+}
+
+.hero-logo {
+  font-size: 4rem;
+  color: var(--accent);
+  filter: drop-shadow(0 0 20px rgba(56,189,248,0.6));
+  margin-bottom: 20px;
+  animation: pulse-glow 3s ease-in-out infinite;
+}
+
+.auth-hero h1 {
+  font-size: 2.4rem;
+  background: var(--grad-accent);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 12px;
+}
+
+.hero-sub {
+  color: var(--text-1);
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 32px;
+}
+
+.hero-features {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.hero-feature {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--text-1);
+  font-size: 0.9rem;
+}
+
+.feature-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: rgba(56,189,248,0.12);
+  border: 1px solid rgba(56,189,248,0.25);
+  display: grid;
+  place-items: center;
+  color: var(--accent);
+  flex-shrink: 0;
+}
+
+/* ── Form panel (right) ── */
+.auth-panel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 24px;
+}
+
+.auth-box {
+  width: 100%;
+  max-width: 400px;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .auth-layout {
+    grid-template-columns: 1fr;
+  }
+  .auth-hero {
+    display: none;
+  }
+  .auth-panel {
+    padding: 32px 20px;
+    align-items: flex-start;
+    padding-top: 60px;
+  }
+}

@@ -1,0 +1,178 @@
+/* ── CSS variables (works on dark bg too) ─────────────────── */
+.rd-root {
+  --rd-track:          rgba(255,255,255,0.08);
+  --rd-grid:           rgba(255,255,255,0.07);
+  --rd-text-secondary: var(--text-2);
+  --rd-border:         var(--border);
+  --rd-bg-card:        var(--grad-card);
+
+  padding: 0;
+  font-family: var(--font-body);
+}
+
+/* ── Section label ────────────────────────────────────────── */
+.rd-section-label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-2);
+  font-family: var(--font-mono);
+  margin: 0 0 12px;
+}
+
+/* ── Ring shared ─────────────────────────────────────────── */
+.ring-wrap {
+  position: relative;
+  flex-shrink: 0;
+}
+.ring-inner {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.rd-hero-pct  { font-size: 1.6rem; font-weight: 800; color: var(--text-0); font-family: var(--font-mono); line-height: 1; }
+.rd-hero-sub  { font-size: 0.68rem; color: var(--text-2); font-family: var(--font-mono); }
+.rd-small-pct { font-size: 0.9rem;  font-weight: 700; color: var(--text-0); font-family: var(--font-mono); }
+
+/* ── Hero card ───────────────────────────────────────────── */
+.rd-hero {
+  display: grid;
+  grid-template-columns: 130px 1fr;
+  gap: 24px;
+  align-items: center;
+  padding: 20px 24px;
+  background: var(--rd-bg-card);
+  border: 1px solid var(--rd-border);
+  border-radius: var(--radius-lg);
+  backdrop-filter: blur(12px);
+  margin-bottom: 4px;
+}
+.rd-hero-icon    { font-size: 1.8rem; line-height: 1; margin-bottom: 4px; }
+.rd-hero-title   { font-size: 1.15rem; font-weight: 700; margin-bottom: 4px; color: var(--text-0); }
+.rd-hero-tagline { font-size: 0.82rem; color: var(--text-2); margin-bottom: 12px; }
+
+.rd-chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.rd-chip {
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  font-family: var(--font-mono);
+}
+.rd-chip-green  { background: rgba(52,211,153,0.12); color: var(--accent-3); border: 1px solid rgba(52,211,153,0.3); }
+.rd-chip-blue   { background: rgba(56,189,248,0.12); color: var(--accent);   border: 1px solid rgba(56,189,248,0.3); }
+.rd-chip-amber  { background: rgba(251,146,60,0.12); color: var(--accent-4); border: 1px solid rgba(251,146,60,0.3); }
+
+/* ── Top 4 rings grid ────────────────────────────────────── */
+.rd-rings-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-bottom: 28px;
+}
+.rd-ring-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 16px 10px;
+  background: var(--rd-bg-card);
+  border: 1px solid var(--rd-border);
+  border-radius: var(--radius-md);
+  text-align: center;
+  transition: border-color 0.2s;
+}
+.rd-ring-card:hover { border-color: var(--border-hi); }
+.rd-ring-name { font-size: 0.75rem; font-weight: 600; color: var(--text-0); line-height: 1.3; }
+.rd-ring-cat  { font-size: 0.68rem; color: var(--text-2); }
+
+/* ── Full bars ───────────────────────────────────────────── */
+.rd-bars-section { margin-bottom: 28px; }
+.rd-legend { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 12px; }
+.rd-legend-item { display: flex; align-items: center; gap: 5px; font-size: 0.75rem; color: var(--text-2); }
+.rd-legend-dot { width: 10px; height: 10px; border-radius: 2px; flex-shrink: 0; }
+
+.rd-bar-row {
+  display: grid;
+  grid-template-columns: 200px 1fr 44px;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+.rd-bar-name {
+  font-size: 0.82rem;
+  color: var(--text-1);
+  text-align: right;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.rd-bar-track {
+  height: 8px;
+  background: rgba(255,255,255,0.06);
+  border-radius: 999px;
+  overflow: hidden;
+}
+.rd-bar-fill {
+  height: 100%;
+  border-radius: 999px;
+  transition: width 0.9s cubic-bezier(.16,1,.3,1);
+}
+.rd-bar-pct {
+  font-size: 0.75rem;
+  color: var(--text-2);
+  font-family: var(--font-mono);
+  font-weight: 600;
+}
+
+/* ── Bottom grid ─────────────────────────────────────────── */
+.rd-bottom-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.rd-chart-card {
+  padding: 16px 18px;
+  background: var(--rd-bg-card);
+  border: 1px solid var(--rd-border);
+  border-radius: var(--radius-md);
+}
+.rd-chart-title {
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--text-2);
+  font-family: var(--font-mono);
+  margin: 0 0 14px;
+}
+
+.rd-cat-bars { display: flex; flex-direction: column; gap: 8px; }
+.rd-cat-row {
+  display: grid;
+  grid-template-columns: 90px 1fr 36px;
+  align-items: center;
+  gap: 8px;
+}
+.rd-cat-label { font-size: 0.75rem; color: var(--text-1); text-align: right; }
+.rd-cat-track { height: 6px; background: rgba(255,255,255,0.06); border-radius: 999px; overflow: hidden; }
+.rd-cat-fill  { height: 100%; border-radius: 999px; transition: width 0.9s cubic-bezier(.16,1,.3,1); }
+.rd-cat-pct   { font-size: 0.72rem; color: var(--text-2); font-family: var(--font-mono); }
+
+/* ── Responsive ──────────────────────────────────────────── */
+@media (max-width: 800px) {
+  .rd-hero          { grid-template-columns: 1fr; justify-items: center; text-align: center; }
+  .rd-chips         { justify-content: center; }
+  .rd-rings-grid    { grid-template-columns: repeat(2, 1fr); }
+  .rd-bar-row       { grid-template-columns: 130px 1fr 36px; }
+  .rd-bottom-grid   { grid-template-columns: 1fr; }
+}
+@media (max-width: 480px) {
+  .rd-rings-grid { grid-template-columns: repeat(2, 1fr); }
+  .rd-bar-row    { grid-template-columns: 1fr; }
+  .rd-bar-name   { text-align: left; }
+}

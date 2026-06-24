@@ -1,0 +1,47 @@
+.rec-layout  { padding: 32px 0 64px; }
+.rec-header  { margin-bottom: 28px; }
+
+.stepper { display:flex; align-items:center; margin-bottom:32px; }
+.step { display:flex; align-items:center; gap:8px; }
+.step-circle {
+  width:32px; height:32px; border-radius:50%;
+  background:rgba(255,255,255,0.06); border:2px solid var(--border);
+  display:grid; place-items:center;
+  font-size:0.82rem; font-weight:700; font-family:var(--font-mono);
+  color:var(--text-2); transition:all 0.2s;
+}
+.step.active .step-circle { background:rgba(56,189,248,0.15); border-color:var(--accent); color:var(--accent); box-shadow:0 0 12px rgba(56,189,248,0.3); }
+.step.done   .step-circle { background:var(--accent); border-color:var(--accent); color:#fff; }
+.step-label  { font-size:0.85rem; font-weight:600; color:var(--text-2); }
+.step.active .step-label { color:var(--accent); }
+.step.done   .step-label { color:var(--text-1); }
+.step-line   { flex:1; height:2px; background:var(--border); margin:0 12px; transition:background 0.3s; }
+.step-line.done { background:var(--accent); }
+
+.step-card   { max-width: 780px; }
+.step-actions {
+  display:flex; justify-content:space-between; align-items:center;
+  margin-top:24px; padding-top:20px; border-top:1px solid var(--border);
+}
+
+.range-slider { width:100%; -webkit-appearance:none; height:4px; border-radius:999px; background:var(--border); outline:none; margin-top:10px; cursor:pointer; }
+.range-slider::-webkit-slider-thumb { -webkit-appearance:none; width:18px; height:18px; border-radius:50%; background:var(--accent); cursor:pointer; box-shadow:0 0 8px rgba(56,189,248,0.5); }
+
+.exp-grid { display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+
+.results-section { }
+.results-summary  {
+  display:flex; align-items:center; justify-content:space-between;
+  gap:12px; margin-bottom:24px; flex-wrap:wrap;
+}
+.summary-pills    { display:flex; align-items:center; gap:6px; flex-wrap:wrap; }
+
+.results-header   { display:flex; align-items:baseline; justify-content:space-between; margin-bottom:16px; gap:12px; }
+
+.jobs-grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(320px,1fr)); gap:16px; }
+
+@media (max-width:700px) {
+  .exp-grid { grid-template-columns:1fr; }
+  .stepper  { flex-wrap:wrap; gap:8px; }
+  .step-line { display:none; }
+}
